@@ -1,0 +1,115 @@
+@font-face
+    font-family: "Icons"
+    src: url('../fonts/Icons.eot')
+    src: url('../fonts/Icons.eot?#iefix') format('eot'), url('../fonts/Icons.woff') format('woff'), url('../fonts/Icons.ttf') format('truetype'), url('../fonts/Icons.svg#Icons') format('svg')
+
+@mixin icon-styles
+    font-family: "Icons"
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    font-style: normal
+    font-variant: normal
+    font-weight: normal
+    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+    text-decoration: none
+    text-transform: none
+
+
+%icon
+    +icon-styles
+
+@function icon-char($filename)
+    $char: ""
+
+    @if $filename == arrow
+        $char: "\E001"
+    
+    @if $filename == imgScreen1Dark
+        $char: "\E002"
+    
+    @if $filename == imgScreen1White
+        $char: "\E003"
+    
+    @if $filename == imgScreen2White
+        $char: "\E004"
+    
+    @if $filename == imgScreen3White_0
+        $char: "\E005"
+    
+    @if $filename == imgScreen3White_1
+        $char: "\E006"
+    
+    @if $filename == imgScreen3White_2
+        $char: "\E007"
+    
+    @if $filename == imgScreen3White_3
+        $char: "\E008"
+    
+    @if $filename == imgScreen4White
+        $char: "\E009"
+    
+    @if $filename == imgScreen5White
+        $char: "\E00A"
+    
+    @if $filename == imgScreen6White
+        $char: "\E00B"
+    
+    @if $filename == imgScreen7White_0
+        $char: "\E00C"
+    
+    @if $filename == imgScreen7White_1
+        $char: "\E00D"
+    
+    @if $filename == imgScreen8White
+        $char: "\E00E"
+    
+    @if $filename == imgScreen9White
+        $char: "\E00F"
+    
+    @if $filename == logo
+        $char: "\E010"
+    
+    @return $char
+
+
+@mixin icon($filename, $insert: before, $extend: true)
+    &:#{$insert}
+        @if $extend
+            @extend %icon
+        @else
+            +icon-styles
+        
+        content: icon-char($filename)
+
+.icon-arrow
+    +icon(arrow)
+.icon-imgScreen1Dark
+    +icon(imgScreen1Dark)
+.icon-imgScreen1White
+    +icon(imgScreen1White)
+.icon-imgScreen2White
+    +icon(imgScreen2White)
+.icon-imgScreen3White_0
+    +icon(imgScreen3White_0)
+.icon-imgScreen3White_1
+    +icon(imgScreen3White_1)
+.icon-imgScreen3White_2
+    +icon(imgScreen3White_2)
+.icon-imgScreen3White_3
+    +icon(imgScreen3White_3)
+.icon-imgScreen4White
+    +icon(imgScreen4White)
+.icon-imgScreen5White
+    +icon(imgScreen5White)
+.icon-imgScreen6White
+    +icon(imgScreen6White)
+.icon-imgScreen7White_0
+    +icon(imgScreen7White_0)
+.icon-imgScreen7White_1
+    +icon(imgScreen7White_1)
+.icon-imgScreen8White
+    +icon(imgScreen8White)
+.icon-imgScreen9White
+    +icon(imgScreen9White)
+.icon-logo
+    +icon(logo)
