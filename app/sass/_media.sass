@@ -1,29 +1,165 @@
 @import "vars"
 
 /*==========  Desktop First  ==========*/
-
+@media only screen and (max-width :  1400px)
+	.screen-section
+		padding: 50px 0
+	.gallery-box .owl-nav
+		right: -60px
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
+	.main-menu__url
+		font-size: em(14px) 
+	.main-section__title
+		font-size: em(70px)
+	.section-content 
+	.section-title
+		font-size: em(60px)
+	.section-text
+		max-width: 480px
+		font-size: em(18px)
+	.graphic-circle, .new-graphic-circle
+		height: 100vw
+		width: 100vw 
+	.new-graphic-circle
+		// background-position: -200px 0
+	.gallery-box .owl-nav
+		right: -10px
 	/**/
-
-
+/* small Desktops */
+@media only screen and (max-width : 1024px)
+	.main-container
+		position: fixed
+	.container
+		padding: 0 35px 
+	.main-menu
+		display: none
+	.burger-menu
+		display: block
+	.change-theme-btn
+		width: 100%
+	.main-container
+		height: 100vh
+	.screen-section
+		padding: 30px 0	
+		>div
+			align-items: start
+			grid-row-gap: 90px
+		
+	.main-section__title
+		max-width: 600px
+		// font-size: em(64px)
+	.light-theme
+		width: 100% 
+		height: 100vh 
+	.graphic-container
+		position: unset
+		top: 60vh
+		width: 100%
+		height: 30vh
+	.change-theme-btn
+		height: 40vh
+		bottom: 0
+		top: auto
+	.graphic-circle, .new-graphic-circle
+		top: 90vh
+	.graphic-img
+		top: 15%
+		right: 0
+		// display: none
+		// left: 62%
+		
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
+@media only screen and (max-width : 992px)  
+	.main-section__title
+		// font-size: em(48px)
+	.section-title
+		font-size: em(46px) 
+	.screen-section>div
+		grid-row-gap: 60px
+	.section-text, .section-title
+		max-width: 350px
+		font-size: em(14px)
+	.graphic-img
+		right: 0
+		top: 25%
+	.graphic-circle, .new-graphic-circle
+		top: 130vh
+	.main-menu
+		// width: max-content
 	/**/
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	.graphic-circle, .new-graphic-circle
+		top: 95vh
+	.graphic-img
+		top: 25%
+		right: -10%
 	/**/
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+	.burger-menu
+		right: 35px
+	.main-container
+		position: fixed
+	.kitchen-design__btn
+		font-size: em(18px)  
+	.main-section__title
+		font-size: em(37px)
+		margin-bottom: rem(50px)
+		line-height: 1.3
+		max-width: 310px
+	.main-btn
+		font-size: em(16px)
+	.kitchen-parts__slider-item
+		// width: 340px
+	.kitchen-parts__btn:first-child
+		margin-right: 10vw
+	.map 
+    	width: 100vw
+	.main-container
+		height: 100vh 
+	.section-title
+		font-size: em(37px)
+	.graphic-circle, .new-graphic-circle
+		top: 100vh
+		transform: translateY(-50%) rotate(-90deg)
+	.new-graphic-circle
+		display: none
+	.graphic-img
+		display: none
 	/**/
 
-
+@media only screen and (max-width : 400px)
+	.section-text, .section-title
+		max-width: 300px
+	.kitchen-parts__btn:first-child
+		margin-right: 10px
+	.kitchen-parts__btn-round
+		width: 40px
+		height: 40px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
+	.burger-menu
+		right: 20px
+	.container
+		padding: 0 20px
+	.screen-section>div
+		grid-row-gap: 40px
+	.section-title
+		font-size: em(32px)
+	.section-text
+		max-width: 300px
+	.kitchen-design__btn
+		font-size: em(14px)
+	.kitchen-parts__slider-inner
+		width: 280px
+	.contacts__gallery-btn
+		font-size: em(20px)
 	/**/
 
 

@@ -247,6 +247,9 @@ body
 	&__item-box
 		border-radius: 1000em
 		overflow: hidden
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
 	&__title
 		margin-bottom: em(20px)
 	&__btn
@@ -465,5 +468,85 @@ body
   width: 700px
   height: 431px
   background-position: -1902px -2416px
+
+.burger-menu
+	width: 30px
+	height: 27px
+	border: none
+	background: 0 0
+	padding: 0
+	z-index: 1000
+	position: fixed
+	right: 3vw
+	top: 35px
+	display: none 
+	&__line 
+		display: block
+		position: absolute
+		width: 30px
+		height: 3px
+		background-color: #000
+		top: 50%
+		-webkit-transform: translateY(-50%)
+		-ms-transform: translateY(-50%)
+		transform: translateY(-50%)
+		-webkit-transition: .15s all ease
+		-o-transition: .15s all ease
+		transition: .15s all ease
+		&::before 
+			position: absolute
+			display: block
+			content: ''
+			width: 30px
+			height: 3px
+			background-color: #000
+			top: -10px 
+			transition: .15s all ease 
+		&::after 
+			position: absolute
+			display: block
+			content: ''
+			bottom: -10px
+			width: 30px
+			height: 3px
+			background-color: #000 
+			transition: .15s all ease
+.mobile-menu
+	left: 0
+	right: 0
+	bottom: 0
+	top: 0
+	width: 100vw
+	height: 100vh
+	background-color: #fff
+	z-index: 10
+	position: fixed
+	display: none  
+	&__box  
+		align-items: center
+		height: inherit
+	&__list  
+		padding: 0
+		margin: auto 
+	&__item 
+		list-style: none
+		text-align: left
+		margin-bottom: 1.25em
+	&__url 
+		text-decoration: none
+		color: #414042
+		font-size: 2.25em
+		font-weight: 500
+/* active */
+.burger-menu.active .burger-menu__line 
+	background-color: transparent
+.burger-menu.active .burger-menu__line::before 
+	transform: rotate(45deg)
+	top: 0
+	background-color:#414042
+.burger-menu.active .burger-menu__line::after 
+	transform: rotate(-45deg)
+	bottom: 0
+	background-color:#414042
 
 @import "media" // Всегда в конце
