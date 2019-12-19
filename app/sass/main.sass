@@ -9,8 +9,7 @@
 ::root
 	--text-color: #2D2E30 
 
-body
-	height: 100%
+body 
 	overflow: hidden
 
 .screen-section
@@ -53,12 +52,13 @@ body
 
 .main-container
 	background-color: #fff
+	overflow: hidden
 
 .dark-theme
 	display: none
 	position: relative
 	z-index: 1
-	width: 60%
+	//width: 60%
 	&.active-theme
 		display: block
 
@@ -66,7 +66,7 @@ body
 	display: none
 	position: relative
 	z-index: 1
-	width: 60%
+	//width: 60%
 	&.active-theme
 		display: block
 
@@ -298,11 +298,13 @@ body
 
 .graphic-container
 	position: absolute
-	width: 40%
+	width: calc(40% + 140px)
 	height: 100vh
 	right: 0
 	top: 0
-	z-index: 0
+	z-index: 2
+	overflow: hidden
+	padding-left: 140px
 
 .graphic-circle, .new-graphic-circle
 	height: 140vh
@@ -320,7 +322,7 @@ body
 	left: 0
 	z-index: 20
 	height: 140vh
-	width: 140vh
+	width: calc(100% - 140px)
 	border: none
 	background-color: transparent
 	cursor: pointer
