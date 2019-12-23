@@ -15,15 +15,10 @@
 	.section-content 
 	.section-title
 		font-size: em(60px)
-		max-width: 590px
+		width: 590px
 	.section-text
-		max-width: 480px
+		width: 480px
 		font-size: em(18px)
-	.graphic-circle, .new-graphic-circle
-		height: 100vw
-		width: 100vw 
-	.new-graphic-circle
-		// background-position: -200px 0
 	.gallery-box .owl-nav
 		right: -10px
 	.main-btn
@@ -40,19 +35,135 @@
 		font-size: 14px
 	.kitchen-parts__btn-next-arrow
 		font-size: 14px
+	.gallery-box
+		max-width: 300px
+	.gallery
+		&__btn
+			font-size: em(18px)
+		&__btn-round
+			width: 40px
+			height: 40px
+			border-width: 2px
+		&__btn-prev-arrow
+			font-size: 14px
+		&__btn-next-arrow
+			font-size: 14px
+		.owl-prev
+			margin-bottom: 25px
+	.graphic-img
+		background-image: url(../img/spritesheet-1200.png)
+		//transform: translateY(-50%) translateX(-10%)
+		left: 20px
+
+	.sprite-imgScreen1Dark
+		width: 468px
+		height: 471px
+		background-position: -5px -5px
+
+	.sprite-imgScreen1White
+		width: 468px
+		height: 471px
+		background-position: -483px -5px
+
+	.sprite-imgScreen2Dark
+		width: 430px
+		height: 395px
+		background-position: -961px -5px
+
+	.sprite-imgScreen2White
+		width: 430px
+		height: 427px
+		background-position: -961px -410px
+
+	.sprite-imgScreen3Dark_0
+		width: 299px
+		height: 382px
+		background-position: -1401px -5px
+
+	.sprite-imgScreen3Dark_1
+		width: 299px
+		height: 382px
+		background-position: -1401px -397px
+
+	.sprite-imgScreen3Dark_2
+		width: 299px
+		height: 382px
+		background-position: -5px -789px
+
+	.sprite-imgScreen3Dark_3
+		width: 299px
+		height: 382px
+		background-position: -314px -789px
+
+	.sprite-imgScreen3White_0
+		width: 299px
+		height: 382px
+		background-position: -623px -789px
+
+	.sprite-imgScreen3White_1
+		width: 299px
+		height: 382px
+		background-position: -1401px -789px
+
+	.sprite-imgScreen3White_2
+		width: 299px
+		height: 382px
+		background-position: -5px -1181px
+
+	.sprite-imgScreen3White_3
+		width: 299px
+		height: 382px
+		background-position: -314px -1181px
+
+	.sprite-imgScreen4Dark
+		width: 455px
+		height: 283px
+		background-position: -932px -847px
+
+	.sprite-imgScreen4White
+		width: 455px
+		height: 283px
+		background-position: -932px -1140px
+
+	.sprite-imgScreen5White
+		width: 390px
+		height: 419px
+		background-position: -1710px -5px
+
+	.sprite-imgScreen6White
+		width: 304px
+		height: 405px
+		background-position: -1710px -434px
+
+	.sprite-imgScreen7White
+		width: 455px
+		height: 395px
+		background-position: -1397px -1181px
+
+	.sprite-imgScreen8Dark
+		width: 455px
+		height: 275px
+		background-position: -5px -1586px
+
+	.sprite-imgScreen8White
+		width: 455px
+		height: 275px
+		background-position: -470px -1586px
+
+	.sprite-imgScreen9White
+		width: 455px
+		height: 280px
+		background-position: -935px -1586px
+
 	/**/
 /* small Desktops */
 @media only screen and (max-width : 1023px)
-	.main-container
-		position: fixed
 	.container
 		padding: 0 35px 
 	.main-menu
 		display: none
 	.burger-menu
 		display: block
-	.change-theme-btn
-		width: 100%
 	.main-container
 		height: 100vh
 	.screen-section
@@ -64,63 +175,54 @@
 	.main-section__title
 		max-width: 600px
 		// font-size: em(64px)
-	.light-theme
-		width: 100% 
-		height: 100vh 
+
+
+	@keyframes slideInDown
+		0% 
+			opacity: 0
+			transform: translateY(-70%) translateX(-50%)
+		100%
+			opacity: 1
+			transform: translateY(-50%) translateX(-50%) 	
+
 	.graphic-container
-		position: unset
-		top: 60vh
+		right: unset
+		left: 0
 		width: 100%
-		height: 30vh
-	.change-theme-btn
-		height: 40vh
+		height: 48%
+		top: unset
 		bottom: 0
-		top: auto
+		padding-left: 0
+		padding-top: 110px
+	.change-theme-btn 
+		width: 100%
+		top: 110px
 	.graphic-circle, .new-graphic-circle
-		top: 90vh
+		width: 140vw
+		height: 140vw
+		transform: translateX(-50%)
+		left: 50%
+		top: unset
 	.graphic-img
-		top: 15%
-		right: 0
-		// display: none
-		// left: 62%
+		top: 13%
+		left: 50%
+		transform: translateY(-50%) translateX(-50%)
+	.section-title
+		font-size: em(54px)
+
+	
 		
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)  
-	.main-section__title
-		// font-size: em(48px)
-	.section-title
-		font-size: em(46px) 
-	.screen-section>div
-		grid-row-gap: 60px
-	.section-text, .section-title
-		max-width: 350px
-		font-size: em(14px)
-	.graphic-img
-		right: 0
-		top: 25%
-	.graphic-circle, .new-graphic-circle
-		top: 130vh
-	.main-menu
-		// width: max-content
 	/**/
-
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
-	.graphic-circle, .new-graphic-circle
-		top: 95vh
-	.graphic-img
-		top: 25%
-		right: -10%
 	/**/
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	.burger-menu
-		right: 35px
-	.main-container
-		position: fixed
 	.kitchen-design__btn
 		font-size: em(18px)  
 	.main-section__title
@@ -131,22 +233,138 @@
 	.main-btn
 		font-size: em(16px)
 	.kitchen-parts__slider-item
-		// width: 340px
+		width: 300px
+	.kitchen-parts__slider-inner
+		width: 300px
 	.kitchen-parts__btn:first-child
 		margin-right: 10vw
 	.map 
-    	width: 100vw
-	.main-container
-		height: 100vh 
+    	//width: 100vw
 	.section-title
-		font-size: em(37px)
-	.graphic-circle, .new-graphic-circle
-		top: 100vh
-		transform: translateY(-50%) rotate(-90deg)
-	.new-graphic-circle
-		display: none
+		font-size: em(32px)
+		width: 100%
+	.section-text
+		font-size: em(14px)
+		width: 100%
+	
+	.screen-section>div
+		grid-row-gap: 50px
+
+	.kitchen-parts__slider-nav
+		padding-top: 5px
+
+	.graphic-container
+		height: 35%
+		padding-top: 30px
+
+	.gallery-box
+		max-width: 170px
+
 	.graphic-img
-		display: none
+		background-image: url(../img/spritesheet-480.png)
+
+	.sprite-imgScreen1Dark
+		width: 234px
+		height: 236px
+		background-position: -5px -5px
+
+	.sprite-imgScreen1White
+		width: 234px
+		height: 236px
+		background-position: -249px -5px
+
+	.sprite-imgScreen2Dark
+		width: 215px
+		height: 198px
+		background-position: -493px -5px
+
+	.sprite-imgScreen2White
+		width: 215px
+		height: 214px
+		background-position: -493px -213px
+
+	.sprite-imgScreen3Dark_0
+		width: 150px
+		height: 191px
+		background-position: -718px -5px
+
+	.sprite-imgScreen3Dark_1
+		width: 150px
+		height: 191px
+		background-position: -718px -206px
+
+	.sprite-imgScreen3Dark_2
+		width: 150px
+		height: 191px
+		background-position: -5px -407px
+
+	.sprite-imgScreen3Dark_3
+		width: 150px
+		height: 191px
+		background-position: -165px -407px
+
+	.sprite-imgScreen3White_0
+		width: 150px
+		height: 191px
+		background-position: -325px -407px
+
+	.sprite-imgScreen3White_1
+		width: 150px
+		height: 191px
+		background-position: -718px -407px
+
+	.sprite-imgScreen3White_2
+		width: 150px
+		height: 191px
+		background-position: -5px -608px
+
+	.sprite-imgScreen3White_3
+		width: 150px
+		height: 191px
+		background-position: -165px -608px
+
+	.sprite-imgScreen4Dark
+		width: 228px
+		height: 142px
+		background-position: -325px -608px
+
+	.sprite-imgScreen4White
+		width: 228px
+		height: 142px
+		background-position: -563px -608px
+
+	.sprite-imgScreen5White
+		width: 195px
+		height: 210px
+		background-position: -878px -5px
+
+	.sprite-imgScreen6White
+		width: 152px
+		height: 203px
+		background-position: -878px -225px
+
+	.sprite-imgScreen7White
+		width: 228px
+		height: 198px
+		background-position: -801px -608px
+
+	.sprite-imgScreen8Dark
+		width: 228px
+		height: 138px
+		background-position: -5px -816px
+
+	.sprite-imgScreen8White
+		width: 228px
+		height: 138px
+		background-position: -243px -816px
+
+	.sprite-imgScreen9White
+		width: 228px
+		height: 140px
+		background-position: -481px -816px
+
+
+
 	/**/
 
 @media only screen and (max-width : 400px)
@@ -164,7 +382,7 @@
 	.container
 		padding: 0 20px
 	.screen-section>div
-		grid-row-gap: 40px
+		//grid-row-gap: 40px
 	.section-title
 		font-size: em(32px)
 	.section-text

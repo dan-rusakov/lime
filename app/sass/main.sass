@@ -39,6 +39,7 @@ body
 	margin: 0 0 em(8px)
 	font-family: $playf
 	color: var(--text-color)
+	max-width: 100%
 
 .section-text
 	font-size: em(22px)
@@ -163,7 +164,7 @@ body
 	&__slider-item
 		float: left
 		width: 700px
-		max-width: 100%
+		max-width: calc(100vw - 60px)
 	&__slider-list
 		position: relative
 		top: 0
@@ -172,6 +173,7 @@ body
 		width: 700px
 		position: relative
 		overflow: hidden
+		max-width: calc(100vw - 60px)
 	&__slider-nav
 		display: flex
 		flex-direction: row
@@ -231,7 +233,7 @@ body
 // gallery section
 
 .gallery-box
-	max-width: 1300px 
+	max-width: 500px 
 	position: relative
 	.owl-nav
 		position: absolute
@@ -257,22 +259,22 @@ body
 		align-items: center
 		background-color: transparent
 		border: none
-		color: #fff
+		color: $green
 		font-size: em(24px)
 		font-weight: 500
 		cursor: pointer
 		outline: none
 		&:hover .kitchen-parts__btn-round, &:focus .kitchen-parts__btn-round
-			background-color: #fff
+			background-color: $green
 			.kitchen-parts__btn-prev-arrow, .kitchen-parts__btn-next-arrow
-				color: #fff
+				color: $green
 		&:first-child
 			margin-right: 80px
 	&__btn-round
 		width: 53px
 		height: 53px
 		border-radius: 53px
-		border: 3px solid #fff
+		border: 3px solid $green
 		display: flex
 		align-items: center
 		justify-content: center
@@ -319,7 +321,7 @@ body
 .change-theme-btn
 	position: absolute
 	top: 0
-	left: 0
+	right: 0
 	z-index: 20
 	height: 140vh
 	width: calc(100% - 140px)
@@ -479,7 +481,7 @@ body
 	padding: 0
 	z-index: 1000
 	position: fixed
-	right: 3vw
+	right: 30px
 	top: 35px
 	display: none 
 	&__line 
@@ -487,13 +489,9 @@ body
 		position: absolute
 		width: 30px
 		height: 3px
-		background-color: #000
+		background-color: $green
 		top: 50%
-		-webkit-transform: translateY(-50%)
-		-ms-transform: translateY(-50%)
 		transform: translateY(-50%)
-		-webkit-transition: .15s all ease
-		-o-transition: .15s all ease
 		transition: .15s all ease
 		&::before 
 			position: absolute
@@ -501,7 +499,7 @@ body
 			content: ''
 			width: 30px
 			height: 3px
-			background-color: #000
+			background-color: $green
 			top: -10px 
 			transition: .15s all ease 
 		&::after 
@@ -511,7 +509,7 @@ body
 			bottom: -10px
 			width: 30px
 			height: 3px
-			background-color: #000 
+			background-color: $green
 			transition: .15s all ease
 .mobile-menu
 	left: 0
@@ -540,15 +538,16 @@ body
 		font-size: 2.25em
 		font-weight: 500
 /* active */
-.burger-menu.active .burger-menu__line 
-	background-color: transparent
-.burger-menu.active .burger-menu__line::before 
-	transform: rotate(45deg)
-	top: 0
-	background-color:#414042
-.burger-menu.active .burger-menu__line::after 
-	transform: rotate(-45deg)
-	bottom: 0
-	background-color:#414042
+.burger-menu.active 
+	.burger-menu__line 
+		background-color: transparent
+		&::before 
+			transform: rotate(45deg)
+			top: 0
+			background-color: $green
+		&::after 
+			transform: rotate(-45deg)
+			bottom: 0
+			background-color: $green
 
 @import "media" // Всегда в конце
