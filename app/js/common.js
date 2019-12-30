@@ -62,7 +62,7 @@
 			darkImg: 'noImg' 
 		},
 		{
-			gradient: 'url("img/map.jpeg")',
+			gradient: 'url("assets/img/map.jpeg")',
 			whiteImg: 'noImg',
 			darkImg: 'noImg'
 		},
@@ -271,7 +271,9 @@
 			}
 	}
 
-	document.querySelector('.change-theme-btn').addEventListener('click', changeTheme);
+	if (document.querySelector('.change-theme-btn')) {
+		document.querySelector('.change-theme-btn').addEventListener('click', changeTheme);
+	}
 	var darkTheme = document.querySelector('.dark-theme');
 	var lightTheme = document.querySelector('.light-theme');
 
@@ -289,7 +291,7 @@
 				preloader: false,
 				fixedContentPos: false,
 				items: {
-					src: '<div class="map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad4bdac9789bd80f6171d54bb3aeb90f1aa4717b58dbf54ad9bac2d13e7edf055&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe></div>'
+					src: '<div class="map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5c55a5fa335e6239f1ae854898e91cc21b392ba7bfa34ab8eefff3c6dbfde4aa&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe></div>'
 				},
 			}, 0);
 			return false;
@@ -310,7 +312,12 @@
 		slider = document.querySelector('.active-theme .kitchen-parts__slider-list');
 		galleryBox = $('.active-theme .gallery-box');
 		galleryItem = document.querySelectorAll('.active-theme .gallery__item-box');
-		document.querySelector('.active-theme .contacts__gallery-btn').addEventListener('click', slideToSection(10));
+		if(document.querySelector('.active-theme .contacts__gallery-btn')){
+			document.querySelector('.active-theme .contacts__gallery-btn').addEventListener('click', function(evt){
+				evt.preventDefault();
+				slideToSection(10);
+			});
+		} 
 		setKitchenSliderListeners();
 		setSliderHeight();
 		setSliderWidth();
@@ -326,6 +333,8 @@
 	}
 
 	// slider 
+
+	if (document.querySelector('.active-theme .kitchen-parts__slider-list')) {
 
 	var slidePosition = {
 		whiteTheme: 0,
@@ -393,9 +402,15 @@
 				slidePosition[themeColor] += -slideWidth();
 				slideNumber[themeColor]++;
 				slider.style.transform = 'translateX('+slidePosition[themeColor]+'px)';
-				window.visual[2][imgColor] = spriteName + (slideNumber[themeColor] - 1);
+				if (!document.querySelector('.about-slider')) {
+					window.visual[2][imgColor] = spriteName + (slideNumber[themeColor] - 1);
+				}
 			}
+			if (!document.querySelector('.about-slider')) {
 			currentPosition = 3;
+			} else {
+				currentPosition = 1;
+			}
 			changeImage();
 		}
 
@@ -413,11 +428,19 @@
 				slidePosition[themeColor] += +slideWidth();
 				slideNumber[themeColor]--;
 				slider.style.transform = 'translateX('+slidePosition[themeColor]+'px)';
-				window.visual[2][imgColor] = spriteName + (slideNumber[themeColor] - 1);
-				currentPosition = 3;
-				changeImage();
+				if (!document.querySelector('.about-slider')) {
+					window.visual[2][imgColor] = spriteName + (slideNumber[themeColor] - 1);
+				}
+				if (!document.querySelector('.about-slider')) {
+					currentPosition = 3;
+					} else {
+						currentPosition = 1;
+					}
+				changeImage(); 
 			}
 		}
+
+	}
 
 	}
 
@@ -427,20 +450,48 @@
 	var mobileMenuUrl = document.querySelector('.mobile-menu');
 
 	for(var m = 0; m < menuUrl.length; m++){
-		menuUrl[m].querySelector('#screen2').addEventListener('click', slideToSection(10));
-		menuUrl[m].querySelector('#screen3').addEventListener('click', slideToSection(11)); 
+		menuUrl[m].querySelector('#screen2').addEventListener('click', function(){
+			if(window.location.pathname.length > 1) {
+				window.location.href = window.location.origin + '#screen2';
+			} else {
+				slideToSection(10);
+			}
+		});
+		menuUrl[m].querySelector('#screen3').addEventListener('click', function(){
+			if(window.location.pathname.length > 1) {
+				window.location.href = window.location.origin + '#screen3';
+			} else {
+				slideToSection(11);
+			}
+		});  
 	}
 
-	mobileMenuUrl.querySelector('#screen2').addEventListener('click', slideToSection(10));
-	mobileMenuUrl.querySelector('#screen3').addEventListener('click', slideToSection(11)); 
-	
+	mobileMenuUrl.querySelector('#screen2').addEventListener('click', function(){
+		if(window.location.pathname.length > 1) {
+			window.location.href = window.location.origin + '#screen2';
+		} else {
+			slideToSection(10);
+		}
+	});
+  mobileMenuUrl.querySelector('#screen3').addEventListener('click', function(){
+		if(window.location.pathname.length > 1) {
+			window.location.href = window.location.origin + '#screen3';
+		} else {
+			slideToSection(11);
+		}
+	}); 
 
-	document.querySelector('.active-theme .contacts__gallery-btn').addEventListener('click', slideToSection(10));
+	
+	
+	if(document.querySelector('.active-theme .contacts__gallery-btn')) {
+		document.querySelector('.active-theme .contacts__gallery-btn').addEventListener('click', function(evt){
+			evt.preventDefault();
+			slideToSection(10);
+		});
+	} 
 
 	function slideToSection(sectionNum){
-		return function(evt){
-			evt.preventDefault();
-			//debugger;
+		//	debugger;
 			if(sectionNum - sectionNumber > 0) {
 				slideScreen('-', sectionNum - sectionNumber);
 			} else if (sectionNum - sectionNumber < 0) {
@@ -452,7 +503,6 @@
 				$(".mobile-menu").fadeToggle();
 				$(".burger-menu").toggleClass("active");
 			}
-		}
 	};
 
 
@@ -517,10 +567,12 @@
 			}
 		});
 
-		var galleryItem = document.querySelectorAll('.active-theme .gallery__item-box');
-		var galleryItemWidth = galleryItem[1].clientWidth;
-		for(var i = 0; i < galleryItem.length; i++){
-			galleryItem[i].style.height = galleryItemWidth + 'px';
+		if (document.querySelector('.active-theme .gallery__item-box')) {
+			var galleryItem = document.querySelectorAll('.active-theme .gallery__item-box');
+			var galleryItemWidth = galleryItem[1].clientWidth;
+			for(var i = 0; i < galleryItem.length; i++){
+				galleryItem[i].style.height = galleryItemWidth + 'px';
+			}
 		}
 
 	};renderGallery();
@@ -538,4 +590,11 @@
 		type:'inline',
 		midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
 	});
+
+	if(window.location.hash == '#screen2') {
+		slideToSection(10);
+	} else if (window.location.hash == '#screen3') {
+		slideToSection(11);
+	}
+
 })();
