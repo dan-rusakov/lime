@@ -59,10 +59,20 @@
 		{
 			gradient: 'linear-gradient(0deg, rgba(218,255,255,1) 0%, rgba(168,187,255,1) 50%)',
 			whiteImg: 'noImg',
-			darkImg: 'noImg'
+			darkImg: 'noImg' 
 		},
 		{
 			gradient: 'url("img/map.jpeg")',
+			whiteImg: 'noImg',
+			darkImg: 'noImg'
+		},
+		{
+			gradient: 'linear-gradient(0deg, rgba(218,255,255,1) 0%, rgba(168,187,255,1) 50%)',
+			whiteImg: 'noImg',
+			darkImg: 'noImg'
+		},
+		{
+			gradient: 'linear-gradient(0deg, rgba(168,187,255,1) 0%, rgba(254,148,148,1) 50%)',
 			whiteImg: 'noImg',
 			darkImg: 'noImg'
 		},
@@ -418,11 +428,11 @@
 
 	for(var m = 0; m < menuUrl.length; m++){
 		menuUrl[m].querySelector('#screen2').addEventListener('click', slideToSection(10));
-		menuUrl[m].querySelector('#screen3').addEventListener('click', slideToSection(11));
+		menuUrl[m].querySelector('#screen3').addEventListener('click', slideToSection(11)); 
 	}
 
 	mobileMenuUrl.querySelector('#screen2').addEventListener('click', slideToSection(10));
-	mobileMenuUrl.querySelector('#screen3').addEventListener('click', slideToSection(11));
+	mobileMenuUrl.querySelector('#screen3').addEventListener('click', slideToSection(11)); 
 	
 
 	document.querySelector('.active-theme .contacts__gallery-btn').addEventListener('click', slideToSection(10));
@@ -523,4 +533,9 @@
 	$(".burger-menu").click(function(){
 		$(".mobile-menu").fadeToggle();
 	})
+	//popup
+	$('.open-popup').magnificPopup({
+		type:'inline',
+		midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+	});
 })();
